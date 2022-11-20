@@ -6,7 +6,7 @@ replicaCount: 2
 
 deployment:
   name: deploy
-  image: a5edevopstuts/webserver-2:25
+  image: a5edevopstuts/webserver-2:33
   port: 80
 
 imagePullSecrets: []
@@ -75,7 +75,7 @@ autoscaling:
   minReplicas: 1
   maxReplicas: 3
   targetCPUUtilizationPercentage: 40
-  name: hpa  
+  name: hpa
   # targetMemoryUtilizationPercentage: 80
 
 nodeSelector: {}
