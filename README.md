@@ -63,7 +63,7 @@ The nginx configuration consists of a basic method to host the static page on de
 
 <h2> Jenkins CI/CD for creating webservers docker image </h2> 
 
-The Jenkins file will clone the repo and create docker images with the version being the Job Build instance ```${DOCKER_REG}/${IMAGE_NAME}:${BUILD_NUMBER}``` and will publish into the docker hub repo and will update the job instance build image name into values.yaml helm chart through python script.
+The Jenkins file will clone the repo and create docker images with the version being the Job Build instance ```${DOCKER_REG}/${IMAGE_NAME}:${BUILD_NUMBER}``` and will publish into the docker hub repo and will update the job instance build image name into values.yaml helm chart through python script.</br>
 ```python upload.py <IMAGE-ID> <PATH-TO-values.yml>```
 
 <img width="317" alt="Jenkins-image-creation-1" src="https://user-images.githubusercontent.com/33144027/203221915-92a91c50-9a99-4d81-a8df-933ef27de2a7.PNG">
