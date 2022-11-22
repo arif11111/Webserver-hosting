@@ -35,10 +35,9 @@ pipeline {
                     docker push ${DOCKER_REG}/${IMAGE_NAME_2}:${BUILD_NUMBER}
                     WEBSERVER2_DOCKER_ID=${DOCKER_REG}/${IMAGE_NAME_2}:${BUILD_NUMBER}
 		    
-		     pip install pathlib
-		     pip install ruamel.yaml
-		     python ../update.py \$WEBSERVER1_DOCKER_ID ${IMAGE_NAME_1}
-		     python ../update.py \$WEBSERVER2_DOCKER_ID ${IMAGE_NAME_2}
+		     cd ..
+		     python update.py \$WEBSERVER1_DOCKER_ID ${IMAGE_NAME_1}
+		     python update.py \$WEBSERVER2_DOCKER_ID ${IMAGE_NAME_2}
 		     """
         
                 }
