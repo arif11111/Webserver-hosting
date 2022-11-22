@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: load-testing
+  labels:
+    app: load-testing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: load-testing
+  template
+    metadata:
+      name: load-testing
+      labels:
+        app: load-testing
+    spec:
+      containers:
+      - name: load-testing-webserver-1
+        image: busybox
+        command:
+        - /bin/sh
+        - -c
+        - "while sleep 0.01; do wget -q -O- http://web-server-1-svc; done"
+      - name: load-testing-webserver-2
+        image: busybox
+        command:
+        - /bin/sh
+        - -c
+        - "while sleep 0.01; do wget -q -O- http://web-server-2-svc; done"	
